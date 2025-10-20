@@ -5,6 +5,8 @@ public class StringAddCalculator {
     public int calculate(String input) {
         if (isBlank(input)) return 0;
 
+        input = input.replace("\\n", "\n");
+
         Delimiter.Result parsed = Delimiter.parse(input);
         Delimiter delimiter = parsed.delimiter();
         String numbersPart = parsed.numbersPart();
